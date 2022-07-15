@@ -8,7 +8,7 @@ export const GlobalStyled = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        background: #f5f5f5;
+        background: var(--primary);
         font-family: 'Roboto', sans-serif;
     }
     :root {
@@ -31,11 +31,11 @@ export const GlobalStyled = createGlobalStyle`
         text-decoration: none;
     }
     a:hover {
-        text-decoration: underline;
+        color: var(--tertiary);
     }
     li {
         display: list-item;
-        text-decoration: none;
+        list-style: none;
     }
 
 `;
