@@ -1,25 +1,24 @@
-import React from 'react'
-import { Container, NavbarLogo, NavbarContainer, NavbarItem, NavbarLink } from './styles'
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
+import { NavbarConteiner } from './styles'
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <Container>
-         <NavbarLogo>
-          <img src="https://www.freepnglogos.com/uploads/logo-png/logo-png-transparent-background-0.png" alt="logo" />
-        </NavbarLogo>
-      <NavbarContainer>
-        <NavbarItem>
-          <NavbarLink to="/">Home</NavbarLink>
-        </NavbarItem>
-        <NavbarItem>
-          <NavbarLink to="/about">About</NavbarLink>
-        </NavbarItem>
-        <NavbarItem>
-          <NavbarLink to="/contact">Contact</NavbarLink>
-        </NavbarItem>
-      </NavbarContainer>
-    </Container>
+    <NavbarConteiner>
+        <span className="logo">Restaurant CMS</span>
+        <div className={`nav-items ${isOpen && "open"}`}>
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+        <div className={`nav-toggle ${isOpen && "open"}`}
+        onClick={() => setIsOpen(!isOpen)}>
+          <div className='bar'>
+
+          </div>
+        </div>
+    </NavbarConteiner>
   )
 }
-
 export default Navbar
