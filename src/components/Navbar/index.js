@@ -1,10 +1,6 @@
 import React, { useState} from 'react'
 import { useAppContext } from '../../AppContext/Context';
 import { NavbarConteiner } from './styles'
-// useAppContext
-
-
-
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +15,7 @@ function Navbar() {
   return (
     <NavbarConteiner>
       {att.map(item => {
-        return <p  className="logoc" key={item.name}>{item.name}</p>
+        return <p  className="logo" key={item.name}>{item.name}</p>
       }
       )}
 
