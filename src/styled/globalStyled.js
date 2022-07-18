@@ -10,6 +10,8 @@ export const GlobalStyled = createGlobalStyle`
     body {
         background: var(--primary);
         font-family: 'Roboto', sans-serif;
+        max-width: 100%;
+        overflow-x: hidden;
     }
     :root {
         --primary: #233000;
