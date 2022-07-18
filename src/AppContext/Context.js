@@ -13,18 +13,19 @@ export const ContextProvider = ({ children }) => {
     useEffect(()=>{
         const allItemsRestaurant = async () => {
             const response = await api.get("/api/restaurants?populate=*");
-            const responseArr = Object.values(response.data);
+            const responseArr = Object.values(response.data.data);
             setRestaurants(responseArr || []);
             console.log("RESPONSE",responseArr);
         };
         return allItemsRestaurant;
     }, []);
 
-    console.log(restaurants);
+
+  
 
     const value = {
+        setRestaurants,
         restaurants,
-        setRestaurants
     };
     return(
       <AppContext.Provider value={value}>
