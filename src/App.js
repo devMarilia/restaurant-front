@@ -1,3 +1,4 @@
+import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import { GlobalStyled } from "./styled/globalStyled";
 
@@ -6,6 +7,7 @@ function App() {
     <div>
       <GlobalStyled/>
       <Navbar/>
+      <Banner/>
     </div>
   );
 }
