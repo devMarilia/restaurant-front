@@ -7,11 +7,14 @@ export const NavbarConteiner = styled.header`
   align-items: center;
   background-color: var(--primary);
   border-bottom: 1px solid var(--secondary);
+
+
   .logo {
     font-weight: 700;
     font-size: 21px;
     margin: 15px;
     width: 10px;
+    color: var(--senary);
 
   }
   .nav-items a {

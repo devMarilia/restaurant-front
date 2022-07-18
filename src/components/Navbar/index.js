@@ -1,11 +1,31 @@
-import React, {useState} from 'react'
+import React, { useState} from 'react'
+import { useAppContext } from '../../AppContext/Context';
 import { NavbarConteiner } from './styles'
+// useAppContext
+
+
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { restaurants } = useAppContext();
+
+  const att = restaurants.map(restaurant => {
+      return restaurant.attributes ? restaurant.attributes : [];
+
+    }
+  );
+
   return (
     <NavbarConteiner>
-        <span className="logo">Restaurant CMS</span>
+      {att.map(item => {
+        return <p  className="logoc" key={item.name}>{item.name}</p>
+      }
+      )}
+
+      <span>
+        <i className="fas fa-bars" onClick={() => setIsOpen(!isOpen)} />
+      </span>
         <div className={`nav-items ${isOpen && "open"}`}>
           <a href="#">Home</a>
           <a href="#">About</a>
